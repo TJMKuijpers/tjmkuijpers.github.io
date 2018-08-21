@@ -199,6 +199,9 @@ input:checked + label {
     width: 300px;
     height: 400px;
 }
+address { 
+    display: block;
+} 
 </style>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
@@ -225,7 +228,7 @@ input:checked + label {
 		</div>
 		<div class='rightColumn'>
 
-		<image class='img' id='GeneExpressionGIf' src='tjmkuijpers.github.io/Network_Exposure.gif' width="200" height="200">
+		<image class='img' id='GeneExpressionGIf' src='NetworkExpressionShort.gif' width="200" height="200">
 		</div>
 	</div>
 	<hr />
@@ -238,7 +241,7 @@ input:checked + label {
 	  </div>
 	  <div class='rightColumn'>
 	
-	  <image class='img' src='tjmkuijpers.github.io/Network_Exposure.gif' width="200" height="200" >
+	  <image class='img' src='Network_Exposure.gif' width="200" height="200" >
 	  </div>
     </div>
 	<hr />
@@ -248,7 +251,7 @@ input:checked + label {
 	Biological information can be assigned to each node in the network by mapping the node identifier  to the DynOVis database. This information includes pathway-to-gene associations from ConsensusPathDB, disease-to-gene associations from the Comparative Toxicogenomics databases, as well as Entrez gene ID, gene symbol, gene synonyms and gene type from the NCBI database.
 	</div>
     <div class='rightColumn'>
-	<image class='img' src='tjmkuijpers.github.io/BiolgoicalData.png'width='200' height='200'>
+	<image class='img' id='BiologicalData' src='BiolgoicalData.png'width='200' height='200'>
 	</div>
 	</div>
 	
@@ -267,21 +270,48 @@ input:checked + label {
     </p>
 
   </section>
+  
+  <section id='content3'>
+  <p>
+  <address>
+	Contact information: <br>
+	LinkedIn:<a href="https://www.linkedin.com/in/kuijperstim/">T.J.M. Kuijpers</a><br>
+	Email: <br>
+	Department of Toxicogenomics:<br>
+	Website: <a href="https://toxicogenomics-um.nl/"> Toxicogenomics </a> <br>
+	
+</address>
+  </p>
+  </section>
 </main>
 
-	<div id="myModal" class="modal">
+<div id="myModal" class="modal">
 	  <!-- The Close Button -->
 	<span class="close">&times;</span>
 
   <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img01" src='C:\Users\tim.kuijpers\Pictures\GIF network\Network_Exposure.gif'>
+  <img class="modal-content" id="img01" src='NetworkExpressionShort.gif'>
 
   <!-- Modal Caption (Image Text) -->
   <div id="caption">Acetominophen exposure NFkB pathway</div>
 </div>
+
+
+<div id="myModal3" class="modal">
+	  <!-- The Close Button -->
+	<span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img03" src='BiolgoicalData.png'>
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption">Integrated biological data</div>
+</div>
+
+
 </html>
 
-	<script>
+<script>
 // Get the modal
 var modal = document.getElementById('myModal');
 
@@ -302,4 +332,5 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() { 
   modal.style.display = "none";
 }
+
 </script>
