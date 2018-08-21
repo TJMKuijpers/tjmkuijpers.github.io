@@ -1,0 +1,282 @@
+
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  font: 14px/1 'Open Sans', sans-serif;
+  color: #555;
+  background: #eee;
+}
+
+h1 {
+  padding: 50px 0;
+  font-weight: 400;
+  text-align: center;
+}
+
+p {
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+main {
+  min-width: 320px;
+  max-width: 800px;
+  padding: 50px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+section {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+}
+
+input {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+}
+
+label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+label[for*='1']:before { content: '\f1cb'; }
+label[for*='2']:before { content: '\f17d'; }
+label[for*='3']:before { content: '\f16b'; }
+label[for*='4']:before { content: '\f1a9'; }
+
+label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+input:checked + label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid orange;
+  border-bottom: 1px solid #fff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+}
+
+@media screen and (max-width: 650px) {
+  label {
+    font-size: 0;
+  }
+  label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  label {
+    padding: 15px;
+  }
+}
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption { 
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+.img{
+	float:right;}
+.container {
+    overflow: hidden;
+	    width: 700px;
+		height:210px;
+}
+
+.leftColumn {
+    float:left;
+	width:400px;
+}
+.rightColumn {
+        float:left;
+    width: 300px;
+    height: 400px;
+}
+</style>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+<main>
+  
+  <input id="tab1" type="radio" name="tabs" checked>
+  <label for="tab1">DynOVis</label>
+    
+  <input id="tab2" type="radio" name="tabs">
+  <label for="tab2">About</label>
+  
+  <input id='tab3' type='radio' name='tabs'>
+  <label for='tab3'>Contact</label>
+    
+    
+  <section id="content1">
+ 
+	<div class='container'>
+		<h3> <span style='color:blue'>Exposure data on biological network: Acetominphen exposure on NFkB pathway </span></h3>
+		<div class='leftColumn'>
+	
+		DynOVis can be used to color the nodes in the biological network with expression data, for instance Log fold change in case of a gene regulatory network or methylation status in case of a methylation network. Time, dose or dose-over-time data points can be used to create an animation that shows the changes in expression over time. A frame-by-frame view of the animation allows the user to study the different expression in the network per data point which increases the understanding of the biological events.
+		</div>
+		<div class='rightColumn'>
+
+		<image class='img' src='//dl.dropboxusercontent.com/s/8ext6vhc6ve2qn8/Network_Exposure.gif?dl=0' width="200" height="200">
+		</div>
+	</div>
+	<hr />
+ 
+    <div class='container'>
+	<h3> <span style='color:blue'> Dynamic interactions in network: Valproic acid exposure on hepatocytes </span></h3>
+      <div class='leftColumn'>
+
+	  In this study, primary human hepatocytes are exposed to VPA for a period of three days with another wash out period of three days.  A selection of genes has been madeand used to create multiple gene-gene interaction networks. Here, the interactions gives information about which gene can influence other genes. These influences are important to study, especially to see if VPA exposure changes these interactions. Therefore, we have used the edge interaction function of DynOVis to create an animation of the dynamic interaction changes over time. 
+	  </div>
+	  <div class='rightColumn'>
+	
+	  <image class='img' src='Network_Exposure.gif' width="200" height="200" >
+	  </div>
+    </div>
+	<hr />
+	<div class='container'>
+	<h3> <span style='color:blue'> Biological functional annotation integrated into DynOVis</span> </h3>
+	<div class='leftColumn'>
+	Biological information can be assigned to each node in the network by mapping the node identifier  to the DynOVis database. This information includes pathway-to-gene associations from ConsensusPathDB, disease-to-gene associations from the Comparative Toxicogenomics databases, as well as Entrez gene ID, gene symbol, gene synonyms and gene type from the NCBI database.
+	</div>
+    <div class='rightColumn'>
+	<image class='img' src='//dl.dropboxusercontent.com/s/obgyw4zybdeg6mo/BiolgoicalData.png?dl=0'width='200' height='200'>
+	</div>
+	</div>
+	
+  </section>
+    
+  <section id="content2">
+    <p>
+      <h3><span style='color:orange'>Project: </span><span style='color:blue'>Enhanced cross-omics visualization in toxicogenomics</span></h3>
+	  In this project the main objective is to obtain more insight in the biological processes underlying the exposure of a cell model to a (toxic) substance. These biological processes are often dynamic, and thus their activity should be monitored at multiple time points. Therefore, this dynamic activity will be captured by monitoring gene expression, miRNA and epigenetic changes at multiple time points using RNA-seq and MeDIP-seq. In addition, multiple phenotypic endpoints are being measured as well in these time-series experiments.
+
+	  Different statistical and mathematical models as well as visualization tools will be applied to achieve the objective. Developing or improving/adjusting methods for data integration, capturing time dependencies/time delays and causality will be part of this project.
+	  </p>
+	  <p>
+	 <h3><span style='color:blue'>Department of Toxicogenomics</span> </h3>
+	 At the Department of Toxicogenomics (TGX), a multidisciplinary team of biologists, chemists, toxicologists and bioinformaticians is working in close collaboration to establish the biological impact of exposures to potentially toxic compounds. The rapid development of the new, so called omics-technologies, has enabled us to establish responses at different molecular levels with higher sensitivity than most classical effect markers, and providing information on the involved molecular mechanisms of action. As such, toxicogenomics research combines toxicology with genomics approaches in order to obtain more accurate understanding of toxicological processes. The application of these innovative omics-technologies in in vitro toxicology and human health risk analysis can be regarded as the central research paradigm of our department.
+    </p>
+
+  </section>
+</main>
+
+	<div id="myModal" class="modal">
+	  <!-- The Close Button -->
+	<span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01" src='C:\Users\tim.kuijpers\Pictures\GIF network\Network_Exposure.gif'>
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption">Acetominophen exposure NFkB pathway</div>
+</div>
+</html>
