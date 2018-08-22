@@ -134,7 +134,18 @@ input:checked + label {
     width: 80%;
     max-width: 700px;
 }
+.modal2-content{
+margin:auto;
+display:block;
+width: 80%;
+max-width:700px;}
 
+.modal3-content{
+margin:auto;
+display:block;
+width:80%;
+max-width:700px;
+}
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
 #caption {
     margin: auto;
@@ -241,7 +252,7 @@ address {
 	  </div>
 	  <div class='rightColumn'>
 	
-	  <image class='img' src='Network_Exposure.gif' width="200" height="200" >
+	  <image class='img' id='DynamicInteraction' src='NetworkVPAgif.gif' width="200" height="200" >
 	  </div>
     </div>
 	<hr />
@@ -296,13 +307,24 @@ address {
   <div id="caption">Acetominophen exposure NFkB pathway</div>
 </div>
 
+<div id="myModal2" class="modal">
+	  <!-- The Close Button -->
+	<span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal2-content" id="img02" src='NetworkVPAgif.png'>
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption">Dynamic interactions with gene expression after VPA exposure</div>
+</div>
+
 
 <div id="myModal3" class="modal">
 	  <!-- The Close Button -->
 	<span class="close">&times;</span>
 
   <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img03" src='BiolgoicalData.png'>
+  <img class="modal3-content" id="img03" src='BiolgoicalData.png'>
 
   <!-- Modal Caption (Image Text) -->
   <div id="caption">Integrated biological data</div>
@@ -331,6 +353,52 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() { 
   modal.style.display = "none";
+}
+
+var modal2 = document.getElementById('myModal2');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img2 = document.getElementById('DynamicInteraction');
+var modalImg2 = document.getElementById("img02");
+var captionText2 = document.getElementById("caption");
+img2.onclick = function(){
+    modal2.style.display = "block";
+    modalImg2.src = this.src;
+    captionText2.innerHTML = this.alt;
+}
+
+var span2 = document.getElementsByClassName("close")[1];
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() { 
+  modal2.style.display = "none";
+}
+
+var modal3 = document.getElementById('myModal3');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img3 = document.getElementById('BiologicalData');
+var modalImg3 = document.getElementById("img03");
+var captionText3 = document.getElementById("caption");
+img3.onclick = function(){
+    modal3.style.display = "block";
+    modalImg3.src = this.src;
+    captionText3.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span3 = document.getElementsByClassName("close")[2];
+
+// When the user clicks on <span> (x), close the modal
+span3.onclick = function() { 
+  modal3.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+		modal.style.display='none'
+        modal3.style.display = "none";
+    }
 }
 
 </script>
